@@ -2,11 +2,11 @@ const rewards = [
   'Watch a funny video',
   'Cup of tea',
   '5-min chat',
-  'Stretch break',
-  'Go for a walk',
+  'Strands race!',
+  'Quick card game!',
   'Snacks!',
-  'Hug break',
-  'Listen to a song'
+  'Snuggle break',
+  'JACKPOT: Give Caleb a chore to do!'
 ];
 
 const wheel = document.getElementById('wheel');
@@ -25,7 +25,7 @@ rewards.forEach((reward, index) => {
 
   const text = document.createElement('div');
   text.classList.add('segment-text');
-  text.style.transform = `rotate(${segmentAngle / 2}deg)`;
+  text.style.transform = `rotate(${segmentAngle / 2}deg) translateY(-130%)`;
   text.innerText = reward;
 
   segment.appendChild(text);
