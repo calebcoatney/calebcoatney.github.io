@@ -2,51 +2,53 @@
   box-sizing: border-box;
 }
 body {
-  font-family: Arial, sans-serif;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  font-family: Arial, sans-serif;
   height: 100vh;
   margin: 0;
-  background-color: #f0f8ff;
+  background-color: #f8f9fa;
+}
+#wheel-container {
+  position: relative;
+  margin-top: 50px;
 }
 #wheel {
-  position: relative;
-  width: 300px;
-  height: 300px;
+  width: 320px;
+  height: 320px;
   border-radius: 50%;
   border: 8px solid #333;
-  overflow: hidden;
+  position: relative;
   transform: rotate(0deg);
   transition: transform 4s cubic-bezier(0.33, 1, 0.68, 1);
+}
+#pointer {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  color: #ff4444;
 }
 .segment {
   position: absolute;
   width: 50%;
   height: 50%;
-  background-color: lightgray;
   clip-path: polygon(100% 0, 0 0, 50% 50%);
   transform-origin: 100% 100%;
 }
-.segment:nth-child(1) { background-color: #f44336; }
-.segment:nth-child(2) { background-color: #e91e63; }
-.segment:nth-child(3) { background-color: #9c27b0; }
-.segment:nth-child(4) { background-color: #673ab7; }
-.segment:nth-child(5) { background-color: #3f51b5; }
-.segment:nth-child(6) { background-color: #2196f3; }
-.segment:nth-child(7) { background-color: #00bcd4; }
-.segment:nth-child(8) { background-color: #009688; }
 .segment-text {
   position: absolute;
   top: 50%;
   left: 50%;
   transform-origin: 0 100%;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
   color: #fff;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
   white-space: nowrap;
-  transform: rotate(0deg) translateX(120px) rotate(0deg); /* Radial alignment */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  transform: rotate(0deg) translateX(110px) rotate(0deg);
 }
 #spin-button {
   margin-top: 20px;
@@ -58,4 +60,9 @@ body {
   border: none;
   border-radius: 5px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+#result {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #333;
 }
